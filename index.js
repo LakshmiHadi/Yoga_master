@@ -2,9 +2,6 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000;
 
-// lakshmi_hadi
-// Lucky@2406
-
 // mangodb connection
 
 
