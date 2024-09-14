@@ -25,8 +25,12 @@ async function run() {
 
     // create a database and collection
     const database = client.db("Yoga_master");
-    const userCollections = database.collection("users");
+    const userCollection = database.collection("users");
     const classesCollection = database.collection("classes");
+    const cartCollection = database.collection("cart");
+    const paymentCollection = database.collection("payments");
+    const enrolledCollection = database.collection("enrolled");
+    const applicationCollection = database.collection("applied");
 
 
 
