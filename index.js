@@ -33,6 +33,9 @@ async function run() {
     const applicationCollection = database.collection("applied");
 
 
+    // classes routes here
+
+
 
 
 
