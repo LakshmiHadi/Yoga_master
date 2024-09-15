@@ -5,7 +5,3 @@ What is yoga and its benefits?
 
 The practice of yoga asanas develops strength and flexibility, while soothing your nerves and calming your mind. The asanas affect the muscles, joints and skin, and the whole body – glands, nerves, internal organs, bones, respiration and the brain.
 
-
-
-
-The practice of yoga asanas develops strength and flexibility, while soothing your nerves and calming your mind. The asanas affect the muscles, joints and skin, and the whole body – glands, nerves, internal organs, bones, respiration and the brain
