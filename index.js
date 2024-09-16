@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
 // mangodb connection
 
@@ -34,6 +34,9 @@ async function run() {
 
 
     // classes routes here
+    app.post('/new-class', (req, res) => {
+
+    })
 
 
 
@@ -53,7 +56,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-res.send('Hello Developers 2025!')
+res.send("Hello Developers 2025!")
 })
 
 app.listen(port, () => {
