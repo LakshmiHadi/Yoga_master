@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
+const cors = require('cors');
 require('dotenv').config()
 const port = process.env.PORT || 3000;
+
+// middleware
+app.use(cors());
 
 // mangodb connection
 
@@ -34,8 +38,11 @@ async function run() {
 
 
     // classes routes here
-    app.post('/new-class', (req, res) => {
+    app.post('/new-class', async (req, res) => {
+      const newClass = req.body;
 
+      const result = await classesCollection.insertOne(newClass);
+      res.send(result);
     })
 
 
