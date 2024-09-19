@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 
 // middleware
 app.use(cors());
+app.use(express.json())
 
 // mangodb connection
 
@@ -40,15 +41,16 @@ async function run() {
     // classes routes here
     app.post('/new-class', async (req, res) => {
       const newClass = req.body;
-
+      // newclass.availableSeats = parseInt(newclass.availableSeats); 
       const result = await classesCollection.insertOne(newClass);
       res.send(result);
     })
 
-
-
-
-
+    app.get('/classes', async(req, res) => {
+      const query = { status: 'approved' };
+      const result = await classesCollection.find().toArray();
+      res.send(result);
+    })
 
 
     // Send a ping to confirm a successful connection
