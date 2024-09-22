@@ -11,7 +11,7 @@ app.use(express.json())
 // mangodb connection
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = 'mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@yoga-master.bywhm.mongodb.net/?retryWrites=true&w=majority&appName=Yoga-master';
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -63,6 +63,15 @@ async function run() {
     app.get('/classes-manage',async(req, res) => {
       const result = await classesCollection.find().toArray();
       res.send(result);
+    })
+
+
+    // update classes
+    app.put('/change-status', async(req, res) => {
+      const id = req.params.id;
+      const status = req.body.status;
+      const reason = req.body.reason;
+      const filter = {_id: new ObjectId(id)}
     })
 
     // Send a ping to confirm a successful connection
