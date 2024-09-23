@@ -66,12 +66,22 @@ async function run() {
     })
 
 
-    // update classes
-    app.put('/change-status', async(req, res) => {
+    // update classes stust and reason
+    app.patch('/change-status', async(req, res) => {
       const id = req.params.id;
       const status = req.body.status;
       const reason = req.body.reason;
       const filter = {_id: new ObjectId(id)}
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+          status: status,
+          reason: reason,
+        },
+      };
+      const result = await cartCollection.updateOne(filter, updateDoc, options);
+      res.send(result);
+
     })
 
     // Send a ping to confirm a successful connection
