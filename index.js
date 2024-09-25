@@ -86,7 +86,7 @@ async function run() {
 
     // get approved  classes
     app.get('approved-classes',async(req, res) => {
-    const query = { status: 'approved'};
+    const query = { status: "approved"};
     const result = await classesCollection.find(query).toArray();
     res.send(result);
     })
