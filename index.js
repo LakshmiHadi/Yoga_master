@@ -91,6 +91,11 @@ async function run() {
     res.send(result);
     })
 
+    //get single classes details
+    app.get('class/:id',async(req, res) => {
+      const id = req.params.id;
+    })
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
