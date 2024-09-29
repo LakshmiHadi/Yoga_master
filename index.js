@@ -66,7 +66,7 @@ async function run() {
     })
 
 
-    // update classes stust and reason
+    // update classes status and reason
     app.patch('/change-status', async(req, res) => {
       const id = req.params.id;
       const status = req.body.status;
@@ -99,7 +99,10 @@ async function run() {
       res.send(result);
     })
 
-    // update class details
+    // update class details (all data)
+    app.put('/update-class/:id', async (req, res) => {
+      
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
