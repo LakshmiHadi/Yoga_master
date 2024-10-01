@@ -101,7 +101,15 @@ async function run() {
 
     // update class details (all data)
     app.put('/update-class/:id', async (req, res) => {
-      
+      const id = req.params.id;
+      const updateClas = req.body;
+      const filter = {_id: new ObjectId(id)};
+      const options ={ upsert: ture };
+      const updateDoc = {
+        $set: {
+          
+        }
+      }
     });
 
     // Send a ping to confirm a successful connection
