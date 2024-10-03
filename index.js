@@ -112,8 +112,11 @@ async function run() {
           price: updateClass.price,
           availableSeats: parseInt(updateClass.availableSeats),
           vedioLink: updateClass.vedioLink,
+          status: 'pending',
         }
-      }
+      };
+      const result = await classesCollection.updateOne(filter, updateDoc, options);
+      res.send(result);
     });
 
     // Send a ping to confirm a successful connection
