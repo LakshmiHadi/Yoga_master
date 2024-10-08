@@ -119,6 +119,11 @@ async function run() {
       res.send(result);
     });
 
+    // cart routes !----
+    app.post('/add-to-cart',async(req, res) => {
+      
+    })
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
