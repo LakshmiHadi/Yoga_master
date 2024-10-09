@@ -121,7 +121,8 @@ async function run() {
 
     // cart routes !----
     app.post('/add-to-cart',async(req, res) => {
-      
+      const newCartItem = req.body;
+      const result = await.cartCollection
     })
 
     // Send a ping to confirm a successful connection
