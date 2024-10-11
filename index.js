@@ -123,7 +123,13 @@ async function run() {
     app.post('/add-to-cart',async(req, res) => {
       const newCartItem = req.body;
       const result = await cartCollection.insertOne(newCartItem);
-    })
+      res.send(result);
+    });
+
+    // get cart item by id  
+    app.get('/cart-item/:id',async (req, res) => {
+
+    });
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
