@@ -128,7 +128,15 @@ async function run() {
 
     // get cart item by id  
     app.get('/cart-item/:id',async (req, res) => {
-
+      const id = req.params.id;
+      const email = req.body.email;
+      const query ={
+        classId: id,
+        userMail: email
+      };
+      const projection = {classId: 1};
+      const result = await cartCollection.findOne(query, {projection: projection});
+      res.send(result);
     });
 
     // Send a ping to confirm a successful connection
