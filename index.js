@@ -142,6 +142,10 @@ async function run() {
     // cart info by user email
     app.get('/cart/:email', async (req, res) => {
       const email = req.params.email;
+      const query = {userMail: email};
+      const projection = {classId: 1};
+      const cart = await cartCollection.find(query, {projection: projection});
+      const classIds = carts.map((cart) => new ObjectId(cart.classId));
     })
 
     // Send a ping to confirm a successful connection
