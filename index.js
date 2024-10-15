@@ -146,6 +146,9 @@ async function run() {
       const projection = {classId: 1};
       const cart = await cartCollection.find(query, {projection: projection});
       const classIds = carts.map((cart) => new ObjectId(cart.classId));
+      const query2 = {_id: {$in: classIds}};
+      const result = await classesCollection.find(query2).toArray();
+      res.send(result);
     })
 
     // Send a ping to confirm a successful connection
