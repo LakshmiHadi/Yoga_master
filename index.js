@@ -149,6 +149,14 @@ async function run() {
       const query2 = {_id: {$in: classIds}};
       const result = await classesCollection.find(query2).toArray();
       res.send(result);
+    });
+
+    // delete cart item
+    app,delete('/delete-cart-item/:id', async (req, res) => {
+      const id = req.params.id;
+      const query = {classId: id};
+      const result = await cartCollection.deleteOne(query);
+      res.send(result);
     })
 
     // Send a ping to confirm a successful connection
