@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors');
 require('dotenv').config()
+const stripe = require("stripe")(process.env.PAYMENT_SECRET)
 const port = process.env.PORT || 3000;
 
 // middleware
