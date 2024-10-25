@@ -161,6 +161,10 @@ async function run() {
     })
 
     //payment routes
+    app.post('/create-payment-intent', async (req, res) =>{
+      const { price } = req.body;
+      const amount = parseInt(price) * 100;
+    })
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
