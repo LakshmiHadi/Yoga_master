@@ -9,10 +9,7 @@ Great! Here’s a basic outline to help you get started on your website about yo
    - Featured Masters: Highlight a few well-known yoga masters with images and short bios.
    - Mission Statement: Explain the purpose of the site (e.g., to educate, inspire, connect practitioners).
 
- 2. About Page
-   - History of Yoga: Overview of yoga’s origins and evolution.
-   - What is a Yoga Master?: Define the role and significance of yoga masters in the practice.
-
+ 
 
 
 
